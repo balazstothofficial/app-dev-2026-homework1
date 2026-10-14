@@ -18,12 +18,12 @@ fun main() {
         require(name.isNotBlank()) { "Please enter a name." } // IllegalArgumentException
         val names = name.split(' ').filter { it.isNotBlank() }
         // Deliberately use check here to demonstrate IllegalStateException as well.
-        check(names.size > 1) { "For this exercise, please enter at least two names." }
+        check(names.size > 1) { "You should have more than one name" }
 
         when (names.size) {
             2 -> println("Has first and last name")
             3 -> println("Has first, middle and last name")
-            else -> throw IllegalStateException("This example only handles two or three names.")
+            else -> throw IllegalStateException("Too many names!") // or: error
         }
     }
 

@@ -5,7 +5,8 @@ package lecture
  *
  * `main` functions are the program entry points.
  * You can have one per file.
- * In IntelliJ you can start a program by clicking on the green arrow next to a main function.
+ * In Android Studio or Intellij you can start a program by clicking on the green arrow next to a
+ * main function.
  *
  * ## Tasks:
  * - Create a `main` function.

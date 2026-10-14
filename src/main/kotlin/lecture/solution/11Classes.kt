@@ -10,7 +10,7 @@ import kotlin.reflect.KProperty
  *
  * ## Tasks:
  * - Create a class [Person], that has a first name, a last name and an age.
- * - Use a primary constructor for [Person]
+ * - Use a primary constructor for [Person].
  * - Create a secondary constructor, which just takes a full name and an age.
  * - Create a public property [Person.name] that combines the first and last names.
  * - Create a member function [Person.congratulate] that prints a nice message for round birthdays.
@@ -89,10 +89,12 @@ class NaivePerson {
 
     val name: String
         get() = "$firstName $lastName"
-    /*set(name) {
-        this.firstName = name.split(" ").first()
-        this.lastName = name.split(" ").last()
-    }*/
+    /*
+        set(name) {
+            this.firstName = name.split(" ").first()
+            this.lastName = name.split(" ").last()
+        }
+    */
 
     fun congratulate() {
         if (age % 10 == 0) {

@@ -16,16 +16,16 @@ package lecture
 fun main() {
     // Exceptions
     fun checkName(name: String) {
-        require(name != "")
+        require(name.isNotBlank()) { "Please enter a name." }
 
-        val names = name.split(" ")
+        val names = name.split(' ').filter { it.isNotBlank() }
 
-        check(names.size > 1)
+        check(names.size > 1) { "You should have more than one name" }
 
         when (names.size) {
             2 -> println("Has first and last name")
             3 -> println("Has first, middle and last name")
-            else -> throw IllegalStateException("Can't reach here") // or: error
+            else -> throw IllegalStateException("Too many names!") // or: error
         }
     }
 
@@ -40,7 +40,7 @@ fun main() {
             Here a good way would be to ask for a name again.
         */
     } catch (e: IllegalStateException) {
-        println("One can have more than 3 names. Exception: \"$e\"")
+        println("Invalid name! Exception: \"$e\"")
     } finally {
         println("BYE!")
     }

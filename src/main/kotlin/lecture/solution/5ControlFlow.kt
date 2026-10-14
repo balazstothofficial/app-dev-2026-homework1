@@ -33,7 +33,7 @@ fun main() {
     */
 
     /*
-    3. Version: if's are expressions
+    3. Version: ifs are expressions
     val string = if (input.length % 2 == 0) "Even" else "Odd"
 
     println(string)

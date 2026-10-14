@@ -16,14 +16,13 @@ package lecture.solution
  *      1. Filter out all elements, that have two or less characters.
  *      2. Append "end" to all remaining elements.
  *      3. Combine all strings to a single list of [Char]s.
- * - Define a generic function `lecture.printEach` that takes a list and prints all its values.
- * - Define a generic function `lecture.mapEverySecond` that operates on a list of type `List<A>`.
+ * - Define a generic function `printEach` that takes a list and prints all its values.
+ * - Define a generic function `mapEverySecond` that operates on a list of type `List<A>`.
  *   The function takes two transformations of type `(A) -> B`:
  *      - The first function is applied to elements at even indices.
  *      - The second function is applied to elements at odd indices.
- *
- *      The result is a new list of type `List<B>` containing the transformed elements.
- * - Change `lecture.printEach` and `lecture.mapEverySecond` to be extension functions.
+ *   The result is a new list of type `List<B>` containing the transformed elements.
+ * - Change `printEach` and `mapEverySecond` to be extension functions.
  * - The functions [let], [run], [apply], and [also] are idiomatic in Kotlin.
  *   What can they be used for?
  *   What is the difference between them?
@@ -58,7 +57,11 @@ fun main() {
     // Generic Function
     printEach(list)
 
-    mapEverySecond(listOf(1, 2, 3, 4), odd = { "$it is at an odd index" }, even = { "$it is at an even index" })
+    mapEverySecond(
+        listOf(1, 2, 3, 4),
+        odd = { "$it is at an odd index" },
+        even = { "$it is at an even index" }
+    )
 
     // Extension Function
     printEach(
@@ -67,9 +70,13 @@ fun main() {
             odd = { "$it is at an odd index" },
             even = { "$it is at an even index" })
     )
+
     // Better:
     listOf(1, 2, 3, 4)
-        .mapEverySecondBetter(odd = { "$it is at an odd index" }, even = { "$it is at an even index" })
+        .mapEverySecondBetter(
+            odd = { "$it is at an odd index" },
+            even = { "$it is at an even index" }
+        )
         .printEachBetter()
 
     val value = 3
